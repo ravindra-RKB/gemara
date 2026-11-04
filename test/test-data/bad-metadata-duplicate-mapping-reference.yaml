@@ -1,0 +1,31 @@
+metadata:
+  id: BAD-METADATA-DUP-REF-ID
+  type: MappingDocument
+  gemara-version: "1.1.0"
+  version: "1.0.0"
+  description: Invalid — metadata defines duplicate mapping-references identifiers
+  author:
+    id: compliance-team
+    name: Compliance Team
+    type: Human
+  mapping-references:
+    - id: NIST-800-53
+      title: NIST SP 800-53 Rev. 5
+      version: "5.1.0"
+      description: Security and Privacy Controls for Information Systems and Organizations
+    - id: NIST-800-53
+      title: Duplicate NIST Reference
+      version: "5.1.0"
+      description: Duplicate mapping reference entry
+
+title: Duplicate Mapping Reference Test
+
+mappings:
+  - id: MAP-001
+    source:
+      reference-id: NIST-800-53
+      entry-id: AC-1
+    relationship: implements
+    targets:
+      - reference-id: NIST-800-53
+        entry-id: AC-2

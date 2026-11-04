@@ -1,0 +1,30 @@
+metadata:
+  id: BAD-METADATA-DUP-APPLICABILITY-GROUP
+  type: ControlCatalog
+  gemara-version: "1.1.0"
+  version: "1.0.0"
+  description: Invalid — metadata defines duplicate applicability-groups identifiers
+  author:
+    id: architecture-team
+    name: Architecture Team
+    type: Human
+  applicability-groups:
+    - id: cloud-production
+      title: Cloud Production
+      description: Production cloud infrastructure
+    - id: cloud-production
+      title: Duplicate Cloud Production
+      description: Duplicate applicability group entry
+
+title: Duplicate Applicability Group Test
+
+groups:
+  - id: core-sec
+    title: Core Security
+    description: Baseline controls
+
+controls:
+  - id: CTRL-001
+    title: Audit Logging
+    description: Centralized audit log aggregation
+    group: core-sec

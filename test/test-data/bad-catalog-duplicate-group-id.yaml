@@ -1,0 +1,26 @@
+metadata:
+  id: BAD-CATALOG-DUP-GROUP-ID
+  type: ControlCatalog
+  gemara-version: "1.1.0"
+  version: "1.0.0"
+  description: Invalid — catalog defines duplicate group identifiers
+  author:
+    id: test
+    name: Test
+    type: Human
+
+title: Invalid duplicate group id
+
+groups:
+  - id: GRP-ACCESS
+    title: Access Control
+    description: Access and authentication policies
+  - id: GRP-ACCESS
+    title: Duplicate Access Control
+    description: Identity and privilege escalation controls
+
+controls:
+  - id: CTRL-001
+    title: Multi-Factor Authentication
+    description: Enforce multi-factor authentication for administrative access
+    group: GRP-ACCESS
