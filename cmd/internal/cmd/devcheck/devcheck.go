@@ -194,10 +194,19 @@ func runGoPackageTests(pkgDir string) CheckResult {
 	err := cmd.Run()
 	passed := (err == nil)
 
+	msg := out.String()
+	if err != nil {
+		if msg != "" {
+			msg = fmt.Sprintf("failed running tests in %s: %v\n%s", pkgDir, err, msg)
+		} else {
+			msg = fmt.Sprintf("failed running tests in %s: %v", pkgDir, err)
+		}
+	}
+
 	return CheckResult{
 		Passed:   passed,
 		Duration: time.Since(start),
-		Message:  out.String(),
+		Message:  msg,
 	}
 }
 
