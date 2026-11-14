@@ -27,6 +27,7 @@ import "list"
 	// mappings is one or more atomic relationships between entries in the referenced artifacts
 	mappings: [#_MappingStrict, ...#_MappingStrict] @go(Mappings,type=[]Mapping)
 
+	// mapping ids must be unique
 	_uniqueMappingIds: {for i, m in mappings {(m.id): i}}
 
 	if metadata."mapping-references" != _|_ {
